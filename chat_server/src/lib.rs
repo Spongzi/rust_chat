@@ -1,5 +1,7 @@
 mod config;
+mod error;
 mod handlers;
+mod models;
 
 use handlers::*;
 
@@ -10,6 +12,9 @@ use axum::{
     routing::{get, patch, post},
 };
 pub use config::AppConfig;
+
+pub use error::AppErr;
+pub use models::User;
 
 #[derive(Debug, Clone)]
 pub(crate) struct AppState {
